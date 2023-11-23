@@ -1,0 +1,115 @@
+:root {
+    --color: #e4752c;
+}
+body {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: sans-serif;
+    animation: animation_for_body 0.75s;
+    background-color: #141213;
+}
+@keyframes animation_for_body {
+    from {
+        opacity: 0;
+        transform: translatey(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translatey(0px);
+    }
+}
+@keyframes animation_for_header {
+    from {
+        opacity: 0;
+        transform: translatex(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translatex(0px);
+    }
+}
+@keyframes animation_for_landing {
+    from {
+        opacity: 0;
+        transform: translatey(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translatey(0px);
+    }
+}
+.active {
+    color: var(--color);
+}
+header {
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    animation: animation_for_header 0.75s;
+    .logo {
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .links span {
+        margin: 0 5px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    .icon span {
+        font-size: 20px;
+        cursor: pointer;
+    }
+    .icon_2 {
+        display: none;
+    }
+}
+section {
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    animation: animation_for_landing 0.75s;
+    .title {
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .paragraph {
+        margin: 20px 0;
+        color: rgb(173, 173, 173);
+    }
+    .btn {
+        background-color: var(--color);
+        width: fit-content;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+    .im img {
+        width: 200px;
+    }
+}
+@media (max-width:484px) {
+    section .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .paragraph {
+            text-align: center;
+        }
+    }
+    .links {
+        display: none;
+    }
+    .icon {
+        display: none;
+    }
+    .icon_2 {
+        display: block !important;
+        & span {
+            cursor: pointer;
+            font-size: 20px;
+        }
+    }
+}
